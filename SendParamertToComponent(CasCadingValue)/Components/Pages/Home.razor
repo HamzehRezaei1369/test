@@ -1,0 +1,27 @@
+﻿@page "/"
+
+@rendermode InteractiveServer
+
+<CascadingValue Value="currentCount" Name="justA">
+    <ComponentA></ComponentA>
+    <ComponentB></ComponentB>
+</CascadingValue>
+<CascadingValue Value="currentCount2" Name="justB">
+    <ComponentA></ComponentA>
+    <ComponentB></ComponentB>
+</CascadingValue>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+    private int currentCount2 = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+        currentCount2 += 5;
+    }
+}
